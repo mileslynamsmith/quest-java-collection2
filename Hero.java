@@ -1,4 +1,6 @@
-public class Hero {
+import javax.lang.model.util.ElementScanner6;
+
+public class Hero implements Comparable<Hero> {
 
     // attributs
     private String name;
@@ -26,5 +28,10 @@ public class Hero {
 
     public void setAge(int age) {
         this.age = age;
+    }
+    //The default sort order should be alphabetically by the name attribute.
+    @Override 
+    public int compareTo(Hero anotherHero){
+        return this.name.compareTo(anotherHero.name);
     }
 }
